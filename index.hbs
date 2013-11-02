@@ -1,0 +1,28 @@
+{{!< default}}
+<main id="main-content" class="content" role="main">
+
+    {{#foreach posts}}
+
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <span class="post-meta"><time
+                        datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time> {{#if tags}}
+                    on {{tags}}{{/if}}</span>
+
+                <h2 class="post-title"><a href="{{url}}" title="{{title}}">{{{title}}}</a></h2>
+            </header>
+            <section class="post-excerpt">
+                <p>{{excerpt}}&hellip; <a href="{{url}}" title="{{title}}">Read more &rarr;</a></p>
+            </section>
+        </article>
+
+    {{/foreach}}
+    {{! {{pagination}}
+
+</main>
+
+<ul id="related-posts-container" class="hidden">
+    {{#foreach posts}}
+        <li><a href="{{url}}" title="{{title}}">{{title}} &rarr;</a></li>
+    {{/foreach}}
+</ul>
