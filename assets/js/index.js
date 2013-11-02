@@ -59,13 +59,11 @@ jQuery(function ($) {
     });
 
     var $window = $(window);
-    $window.scroll(function(){
-        if($window.scrollTop() > $('#site-head').height()) {
-            $('#site-footer').css({zIndex: 2});
-            $('#site-head').css({zIndex: 1});
-        }else {
-            $('#site-footer').css({zIndex: 1});
-            $('#site-head').css({zIndex: 2});
+    $window.scroll(function () {
+        if ($window.scrollTop() > 50) {
+            $('.site-footer').css({bottom: 0});
+        } else {
+            $('.site-footer').css({bottom: -200});
         }
     });
 
