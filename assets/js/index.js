@@ -58,6 +58,17 @@ jQuery(function ($) {
         });
     });
 
+    var $window = $(window);
+    $window.scroll(function(){
+        if($window.scrollTop() > $('#site-head').height()) {
+            $('#site-footer').css({zIndex: 2});
+            $('#site-head').css({zIndex: 1});
+        }else {
+            $('#site-footer').css({zIndex: 1});
+            $('#site-head').css({zIndex: 2});
+        }
+    });
+
     $internalLinks.click(function (e) {
         e.preventDefault();
         var url = $(this).attr('href');
