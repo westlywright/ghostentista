@@ -2,7 +2,7 @@
 ## Theme for Ghost Blogging Platform
 ### version 0.3
 
-Responsive, asynchronous, content centric theme for Ghost. Very loosely based on Casper and inspired by my own WordPress theme Kontentista (also not quite finished). Built using modern web technologies and with a help of LESS preprocessor. ~~Currently tested only on Webkit based browsers~~. But will be tuned up within days.
+Responsive, asynchronous, content centric theme for Ghost. Very loosely based on Casper and inspired by my own WordPress theme Kontentista (also not quite finished). Built using modern web technologies and with a help of LESS preprocessor. Tested on IE9+, Chrome Firefox, Safari, iOS7 and Android 4.3 on Nexus 7.
 
 ### Demo
 - [Latest version can be seen at Etheeks.com](http://www.etheeks.com)
