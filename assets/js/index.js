@@ -104,7 +104,6 @@ jQuery(function ($) {
             clearInterval(checkInterval);
         }, false);
         function scrollPosFooterFix() {
-            $('h1').html($window.scrollTop());
             if ($window.scrollTop() > 50) {
                 $('.site-footer').css({bottom: 0});
             } else {
