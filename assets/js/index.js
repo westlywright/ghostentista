@@ -110,6 +110,7 @@ jQuery(function ($) {
                 $('.site-footer').css({bottom: -200});
             }
         }
+        scrollPosFooterFix();
     }
 
 });
