@@ -8,8 +8,8 @@
 
 @footer: #3A4145;
 @title: #3a4145;
-@link: #B5014B;
-@accent: #17b571;
+@link: #1a75b5;
+@accent: rgba(13, 46, 178, 0.91);
 @contentBg: #fff;
 @subtle: #ddd;
 
@@ -48,7 +48,8 @@ body {
 }
 
 header#site-head {
-  background-color: @accent;
+  user-select: none;
+  background-color: lighten(@accent, 35%);
   position: fixed;
   top: 0;
   z-index: 1;
@@ -77,13 +78,18 @@ header#site-head {
     margin: 0 auto;
     width: 20rem;
     height: 20rem;
-    background-color: fadeout(@link, 15%);
+    background: linear-gradient(left, rgba(105, 94, 127, 0.6) 0%, rgba(255, 92, 92, 0.6) 15%, rgba(255, 160, 17, 0.6) 27%, rgba(252, 236, 93, 0.61) 37%, rgba(255, 229, 145, 0.63) 46%, rgba(111, 196, 173, 0.65) 58%, rgba(106, 132, 186, 0.67) 69%, rgba(209, 119, 195, 0.69) 79%, rgba(216, 213, 125, 0.7) 89%, rgba(216, 213, 125, 0.8) 100%), repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.6), transparent 20px, rgba(255, 255, 255, 0.5) 40px);
+    background-size: 300% 100%;
+    background-position: center left, top left;
+    //background-clip: text;
+
+//    background-color: fadeout(@accent, 15%);
     padding-top: 4rem;
-    box-shadow: inset 0 0 0 0 fadeout(darken(@link, 15%), 5%);
+    box-shadow: inset 0 0 0 10rem fadeout(darken(#FF5C5C, 5%), 90%);
     &:hover {
-      box-shadow: inset 0rem 0 0 10rem fadeout(darken(@link, 5%), 5%);
+      box-shadow: inset 0rem 0 0 10rem fadeout(darken(#FF5C5C, 5%), 65%);
       h2 {
-        border-color: desaturate(lighten(@link, 10%), 45%);
+        border-color: desaturate(lighten(#FF5C5C, 10%), 45%);
       }
     }
   }
@@ -91,7 +97,7 @@ header#site-head {
     text-decoration: none;
   }
   h1, h2 {
-    max-width: 16rem;
+    max-width: 14rem;
   }
   h1 {
     height: 8rem;
@@ -110,13 +116,14 @@ header#site-head {
     height: 3rem;
     line-height: 3rem;
     font-size: 1rem;
+    letter-spacing: 0;
     padding: 0;
     margin: 0 auto;
     color: rgba(255, 255, 255, 1);
     text-align: center;
     font-weight: lighter;
     text-transform: uppercase;
-    border-top: 1px solid lighten(@link, 35%);
+    border-top: 3px double lighten(desaturate(fadeout(#FF5C5C, 25%),75%),10%);
   }
 }
 
