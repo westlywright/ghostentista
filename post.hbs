@@ -42,11 +42,8 @@
 
                 {{#if author}}
                     <section class="author">
+                        <div class="image"><img src="{{author.image}}" title="{{author.name}}"/></div>
                         <h4>{{author.name}}</h4>
-
-                        <div class="image">
-                            <img src="{{author.image}}" title="{{author.name}}"/>
-                        </div>
                         <p>{{author.bio}}</p>
                     </section>
                 {{/if}}

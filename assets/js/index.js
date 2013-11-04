@@ -94,23 +94,4 @@ jQuery(function ($) {
         }
     }
 
-    // fix for ios overscrolling issue
-    if ('ontouchstart' in document.documentElement) {
-        var checkInterval;
-        window.addEventListener('touchstart', function (e) {
-            checkInterval = setInterval(scrollPosFooterFix, 20);
-        }, false);
-        document.addEventListener('touchend', function (e) {
-            clearInterval(checkInterval);
-        }, false);
-        function scrollPosFooterFix() {
-            if ($window.scrollTop() > 50) {
-                $('.site-footer').css({bottom: 0});
-            } else {
-                $('.site-footer').css({bottom: -200});
-            }
-        }
-        scrollPosFooterFix();
-    }
-
 });
