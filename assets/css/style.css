@@ -624,7 +624,7 @@ body * {
 }
 
 body {
-  min-width: 27em;
+  min-width: 20em;
   background-color: #ffffff;
   color: #77888c;
   margin: 0;
@@ -633,6 +633,30 @@ body {
 
 .hidden {
   display: none;
+}
+
+nav#pagination {
+  margin-top: 2em;
+  text-align: center;
+}
+
+nav#pagination #more-posts {
+  margin: 0 auto;
+  border: 1px solid #dddddd;
+  background-color: #f4f4f4;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #3a4145;
+  font-size: 0.75em;
+}
+
+nav#pagination #more-posts:hover {
+  background-color: #3a4145;
+  border-color: #3a4145;
+  color: #dddddd;
 }
 
 header#site-head {

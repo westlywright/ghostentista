@@ -18,6 +18,9 @@ Responsive, asynchronous, content centric theme for Ghost. Very loosely based on
 
 ## Changelog
 ------------------------------
+### 0.4.2
+- asynchronous paging
+------------------------------
 ### 0.4.1 - service release
 - fixed issues #1 #2
 - animations only for big screens

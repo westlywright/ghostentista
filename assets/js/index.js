@@ -30,30 +30,22 @@ jQuery(function ($) {
                 url: state.url + ' #main-content',
                 cache: true,
                 contentType: 'html',
-                statusCode: {
-                    404: function () {
-                        Avgrund.show('#default-popup');
-                    }
-                },
-                dataFilter: function (data, type) {
-                    type = type || 'text';
-                    if (type == 'html' || type == 'text') {
-                        data = data.replace(/<link.*?\/>/gi, '');
-                        data = data.replace(/<script.*?>([\w\W]*?)<\/script>/gi, '');
-                        data = $(data).filter('#main-content').children().parent();
-                        return data.html();
-                    }
-
-                    return data;
-                },
+                dataFilter: dataFilter,
                 success: function (data, status) {
-                    $mainContent.html(data);
-                    Prism.highlightElement();
                     switch (status) {
                         case 'error':
                             alert('Something terrible has happened. Sky is falling on your head.');
                             break;
                         case 'success':
+                            $mainContent
+                                .html(data)
+                                .find(internalLinksQuery)
+                                .not('#more-posts')
+                                .click(pushHistoryState);
+
+                            $mainContent.find('#more-posts').click(loadMorePosts);
+
+                            Prism.highlightElement();
                             scrollToContent();
                             displayRelatedPosts();
                             break;
@@ -63,15 +55,36 @@ jQuery(function ($) {
         });
 
         // override all internal clicks and updates content asynchronously
-        $internalLinks.click(function (e) {
-            e.preventDefault();
-            var url = $(this).attr('href');
-            var title = $(this).attr('title') || null;
-            History.pushState({}, title, url);
-        });
+        console.log($internalLinks.not('#more-posts'));
+        $internalLinks.not('#more-posts').click(pushHistoryState);
 
     }
 
+    $('#more-posts').click(loadMorePosts);
+
+    function loadMorePosts(e) {
+        e.preventDefault();
+        var $more = $('#more-posts');
+        var url = $more.attr('href');
+        $more.remove();
+        $.ajax({
+            url: url + ' #main-content',
+            cache: true,
+            contentType: 'html',
+            dataFilter: dataFilter,
+            success: function (data, status) {
+                switch (status) {
+                    case 'error':
+                        alert('Something terrible has happened. Sky is falling on your head.');
+                        break;
+                    case 'success':
+                        $mainContent.append(data);
+                        $mainContent.find('#more-posts').click(loadMorePosts);
+                        break;
+                }
+            }
+        });
+    }
 
     // if on home, updates related posts in local storage
     // if on posts, displays related posts if available
@@ -95,4 +108,24 @@ jQuery(function ($) {
         }
     }
 
+    // removes all css and style tags from loaded content to prevent reinitialization
+    function dataFilter(data, type) {
+        type = type || 'text';
+        if (type == 'html' || type == 'text') {
+            data = data.replace(/<link.*?\/>/gi, '');
+            data = data.replace(/<script.*?>([\w\W]*?)<\/script>/gi, '');
+            data = $(data).filter('#main-content').children().parent();
+            return data.html();
+        }
+
+        return data;
+    }
+
+    // pushes state to history
+    function pushHistoryState(e) {
+        e.preventDefault();
+        var url = $(this).attr('href');
+        var title = $(this).attr('title') || null;
+        History.pushState({}, title, url);
+    };
 });

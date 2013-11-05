@@ -17,8 +17,11 @@
         </article>
 
     {{/foreach}}
-    {{pagination}}
-
+    {{#if pagination.next}}
+        <nav id="pagination">
+            <a href="{{pageUrl pagination.next}}" id="more-posts">Load more posts</a>
+        </nav>
+    {{/if}}
 </main>
 
 <ul id="related-posts-container" class="hidden">
