@@ -624,6 +624,7 @@ body * {
 }
 
 body {
+  min-width: 27em;
   background-color: #ffffff;
   color: #77888c;
   margin: 0;
@@ -653,7 +654,6 @@ header#site-head {
 header#site-head .vertical {
   width: 100%;
   height: 45em;
-  padding: 6em 0 2em;
   background: url(../img/cover-pattern.png) 0 0 repeat;
 }
 
@@ -676,7 +676,7 @@ header#site-head #site-head-content {
   background: -webkit-gradient(linear, top left, bottom right, from(#ff8cc6), color-stop(50%, #962d7e), to(#ef5171)) 100% 0;
   background: -webkit-linear-gradient(top left, #ff8cc6 0%, #962d7e 50%, #ef5171 100%) 100% 0;
   background: linear-gradient(to bottom right, #ff8cc6 0%, #962d7e 50%, #ef5171 100%) 100% 0;
-  padding-top: 4em;
+  padding-top: 2.5em;
 }
 
 header#site-head #site-head-content:hover {
@@ -699,16 +699,23 @@ header#site-head h2 {
 }
 
 header#site-head h1 {
-  height: 1.8em;
   line-height: 1;
   margin: 0.05em auto 0.05em;
   padding: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 6em;
+  padding-bottom: 0.1em;
+  padding-top: 0.35em;
 }
 
 header#site-head h1.image-logo {
-  width: 3.25em;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 1.5em;
+  width: 2.75em;
   overflow: hidden;
-  text-indent: -300px;
+  text-indent: -30em;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   -webkit-background-size: contain;
@@ -736,7 +743,6 @@ main.content {
   position: relative;
   z-index: 3;
   width: 100%;
-  display: table;
   overflow: hidden;
   -webkit-box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.35);
   box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.35);
@@ -869,12 +875,13 @@ main.content section.share {
   background-color: #fceff2;
   border: 1px solid #f5c3ce;
   display: block;
-  width: 30em;
+  width: 100%;
+  max-width: 30em;
   margin: 0 auto 3em;
   text-align: center;
   height: 5em;
   line-height: 5em;
-  padding: 0 2em;
+  padding: 0 1em;
 }
 
 main.content section.share h4 {
@@ -891,7 +898,7 @@ main.content section.share h4 {
 main.content section.share .links {
   font-size: 2em;
   margin: 0;
-  padding: 0 0 0 1em;
+  padding: 0 0 0 .5em;
   display: inline;
   text-align: right;
 }
@@ -910,9 +917,6 @@ main.content section.share .links a:before {
 
 main.content section.share .links a:hover:before {
   color: #89172f;
-  -webkit-transform: translate(0, -0.25em);
-  -ms-transform: translate(0, -0.25em);
-  transform: translate(0, -0.25em);
 }
 
 main.content footer.post-footer {
@@ -1057,39 +1061,7 @@ footer.site-footer .inner {
   margin-top: 1em;
 }
 
-@media screen and (max-width: 25em) {
-  body {
-    font-size: 0.7em;
-  }
-
-  body header#site-head {
-    height: 33em;
-  }
-
-  body main.content {
-    margin-top: 27em;
-  }
-}
-
-@media screen and (min-width: 25em) and (max-width: 30em) {
-  body {
-    font-size: 0.8em;
-  }
-
-  body header#site-head {
-    height: 37em;
-  }
-
-  body header#site-head .vertical {
-    padding-top: 8em;
-  }
-
-  body main.content {
-    margin-top: 30em;
-  }
-}
-
-@media screen and (min-width: 30em) and (max-width: 40em) {
+@media screen and (max-width: 40em) {
   body {
     font-size: 1em;
   }
@@ -1099,7 +1071,7 @@ footer.site-footer .inner {
   }
 
   body header#site-head .vertical {
-    padding-top: 8em;
+    padding-top: 4.5em;
   }
 
   body main.content {
@@ -1117,7 +1089,7 @@ footer.site-footer .inner {
   }
 
   body header#site-head .vertical {
-    padding-top: 10em;
+    padding-top: 6em;
   }
 
   body main.content {
@@ -1135,7 +1107,7 @@ footer.site-footer .inner {
   }
 
   body header#site-head .vertical {
-    padding-top: 12em;
+    padding-top: 8em;
     -webkit-animation: pat-anim infinite 15s linear;
     animation: pat-anim infinite 15s linear;
   }
