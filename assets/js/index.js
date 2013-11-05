@@ -46,7 +46,7 @@ jQuery(function ($) {
 
                     return data;
                 },
-                success: function (data, status, xhr) {
+                success: function (data, status) {
                     $mainContent.html(data);
                     Prism.highlightElement();
                     switch (status) {
@@ -77,8 +77,9 @@ jQuery(function ($) {
     // if on posts, displays related posts if available
     function displayRelatedPosts() {
         var related = JSON.parse(localStorage.getItem('relatedPosts'));
-        if (related.length > 0 && $('nav.related-posts ul').length > 0) {
-            $('nav.related-posts ul').html(related);
+        var $nav = $('nav.related-posts ul');
+        if (related.length > 0 && $nav.length > 0) {
+            $nav.html(related);
         } else {
             $('nav.related-posts').remove();
         }

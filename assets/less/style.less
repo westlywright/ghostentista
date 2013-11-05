@@ -70,7 +70,6 @@ header#site-head {
     height: 45em;
     padding: 6em 0 2em;
     background: url(../img/cover-pattern.png) 0 0 repeat;
-    animation: pat-anim infinite 15s linear;
     a {
       position: relative;
       cursor: pointer;
@@ -87,7 +86,6 @@ header#site-head {
     width: 20em;
     height: 20em;
     background: linear-gradient(to bottom right, #FF8CC6 0%, #962D7E 50%, #EF5171 100%) 100% 0;
-    animation: logo-anim infinite 10s linear;
     padding-top: 4em;
     &:hover {
       h2 {
@@ -355,7 +353,6 @@ footer.site-footer {
   text-align: center;
   padding: 2em 0 0 0;
   background: @footer url(../img/footer-pattern.png) 0 0 repeat;
-  animation: pat-anim infinite 15s linear;
   div, section {
     margin: 0 auto;
   }
@@ -421,7 +418,7 @@ footer.site-footer {
 // Media queries
 //==============================================================================
 
-@media screen and (max-width: 25rem) {
+@media screen and (max-width: 25em) {
   body {
     font-size: 0.7em;
     header#site-head {
@@ -432,7 +429,7 @@ footer.site-footer {
     }
   }
 }
-@media screen and (min-width: 25rem) and (max-width: 30rem) {
+@media screen and (min-width: 25em) and (max-width: 30em) {
   body {
     font-size: 0.8em;
     header#site-head {
@@ -446,7 +443,7 @@ footer.site-footer {
     }
   }
 }
-@media screen and (min-width: 30rem) and (max-width: 40rem) {
+@media screen and (min-width: 30em) and (max-width: 40em) {
   body {
     font-size: 1em;
     header#site-head {
@@ -460,7 +457,7 @@ footer.site-footer {
     }
   }
 }
-@media screen and (min-width: 40rem) and (max-width: 60rem) {
+@media screen and (min-width: 40em) and (max-width: 60em) {
   body {
     font-size: 1.2em;
     header#site-head {
@@ -474,18 +471,25 @@ footer.site-footer {
     }
   }
 }
-@media screen and (min-width: 60rem) {
+@media screen and (min-width: 60em) {
   body {
     font-size: 1.4em;
     header#site-head {
       .vertical {
         padding-top: 12em;
+        animation: pat-anim infinite 15s linear;
+      }
+      #site-head-content {
+        animation: logo-anim infinite 10s linear;
       }
       height: 45em;
     }
     main.content {
       margin-top: 37em;
     }
+  }
+  footer.site-footer {
+    animation: pat-anim infinite 15s linear;
   }
 }
 
