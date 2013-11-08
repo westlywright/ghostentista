@@ -27,7 +27,7 @@ Responsive, asynchronous, content centric theme for Ghost. Very loosely based on
 ------------------------------
 #### 0.4.2    
 - asynchronous paging
-- LESS styles are no longer part of the project
+- LESS styles are no longer part of the project    
 ------------------------------
 #### 0.4.1 - service release
 - fixed issues #1 #2
