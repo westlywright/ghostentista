@@ -27,12 +27,14 @@ Responsive, asynchronous, content centric theme for Ghost. Very loosely based on
 ------------------------------
 #### 0.4.2    
 - asynchronous paging
-- LESS styles are no longer part of the project    
+- LESS styles are no longer part of the project
+   
 ------------------------------
 #### 0.4.1 - service release
 - fixed issues #1 #2
 - animations only for big screens
 - text size corrections to maintain optimal number of characters on line
+   
 ------------------------------
 #### 0.4
 - rewriten most layout code, 18% faster page rendering in chrome
@@ -43,10 +45,9 @@ Responsive, asynchronous, content centric theme for Ghost. Very loosely based on
 - nifty animation on image logo
 - temporarily removed footer static position until I have nervs to deal with fraking iOS7
 - pagination working
-
+   
 ## Known issues
-- none :)
-- if you find something, report it and it will be fixed in next commit
+None. If you find something, report it and it will be fixed in next commit
 
 ## Copyright & License
 
