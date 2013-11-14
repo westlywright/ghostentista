@@ -1,22 +1,79 @@
 {{!< default}}
 <main id="main-content" class="content" role="main">
 
-    {{#foreach posts}}
+    <div class="article-wrapper">
+        {{#if pagination.prev}}
 
-        <article class="{{post_class}}">
-            <header class="post-header">
-                <span class="post-meta"><time
-                        datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time> {{#if tags}}
-                    on {{tags}}{{/if}}</span>
+            {{#foreach posts}}
 
-                <h2 class="post-title"><a href="{{url}}" title="{{title}}">{{{title}}}</a></h2>
-            </header>
-            <section class="post-excerpt">
-                <p>{{excerpt}}&hellip; <a href="{{url}}" title="{{title}}" class="more-link">Read more &rarr;</a></p>
-            </section>
-        </article>
+                <article class="{{post_class}}">
+                    <header class="post-header">
+                        <span class="post-meta">
+                            <time datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
+                            {{#if tags}}<span class="tagged"> on {{tags}}</span>{{/if}}
+                        </span>
 
-    {{/foreach}}
+                        <h2 class="post-title"><a href="{{url}}" title="{{title}}">{{{title}}}</a></h2>
+                    </header>
+                    <section class="post-excerpt">
+                        <p>{{excerpt}}&hellip; <a href="{{url}}" title="{{title}}" class="more-link">Read&nbsp;more&nbsp;&rarr;</a></p>
+                    </section>
+                </article>
+
+                {{#if @even}}
+                    <hr class="post-sep"/>{{/if}}
+
+            {{/foreach}}
+
+        {{else}}
+
+            {{#foreach posts}}
+
+                {{#if @first}}
+                    <article class="latest-post">
+                        <header class="post-header">
+                            <span class="post-meta">
+                                <time datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
+                                {{#if tags}}<span class="tagged"> on {{tags}}</span>{{/if}}
+                            </span>
+
+                            <h2 class="post-title"><a href="{{url}}" title="{{title}}">{{{title}}}</a></h2>
+                        </header>
+                        <section class="post-excerpt">
+                            <p>{{excerpt}}&hellip; <a href="{{url}}" title="{{title}}" class="more-link">Read&nbsp;more&nbsp;&rarr;</a></p>
+                        </section>
+                    </article>
+
+                    <hr class="post-sep"/>
+                {{/if}}
+            {{/foreach}}
+
+            {{#foreach posts}}
+
+                {{#unless @first}}
+                    <article class="{{post_class}}">
+                        <header class="post-header">
+                        <span class="post-meta">
+                            <time datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
+                            {{#if tags}}<span class="tagged"> on {{tags}}</span>{{/if}}
+                        </span>
+
+                            <h2 class="post-title"><a href="{{url}}" title="{{title}}">{{{title}}}</a></h2>
+                        </header>
+                        <section class="post-excerpt">
+                            <p>{{excerpt}}&hellip; <a href="{{url}}" title="{{title}}" class="more-link">Read&nbsp;more&nbsp;&rarr;</a></p>
+                        </section>
+                    </article>
+
+                    {{#if @odd}}
+                        <hr class="post-sep"/>{{/if}}
+
+                {{/unless}}
+            {{/foreach}}
+
+        {{/if}}
+    </div>
+
     {{#if pagination.next}}
         <nav id="pagination">
             <a href="{{pageUrl pagination.next}}" id="more-posts">Load more posts</a>
@@ -29,3 +86,4 @@
         <li><a href="{{url}}" title="{{title}}">{{title}} &rarr;</a></li>
     {{/foreach}}
 </ul>
+
