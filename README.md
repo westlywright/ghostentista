@@ -1,8 +1,8 @@
 # Ghostentista
 ## Theme for Ghost Blogging Platform
-### version 0.4.2
+### version 0.5
 
-Responsive, asynchronous, content centric theme for Ghost. Very loosely based on Casper and inspired by my own WordPress theme Kontentista (also not quite finished). Built using modern web technologies and with a help of LESS preprocessor. Tested on IE9+, Chrome Firefox, Safari, iOS7 and Android 4.3 on Nexus 7.
+Responsive, asynchronous, content centric theme for Ghost. Inspired by my own WordPress theme Kontentista (not quite finished). Built using modern web technologies and with a help of LESS preprocessor. Tested on IE9+, Chrome Firefox, Safari, iOS7 and Android 4.3 on Nexus 7.
 
 ### Demo
 - [Latest version can be seen at Etheeks.com](http://www.etheeks.com)
@@ -10,32 +10,37 @@ Responsive, asynchronous, content centric theme for Ghost. Very loosely based on
 ### Features
 - Optimal letters per line for great reading experience
 - Prism code highlighting
-- Asynchronous content loading
 - Asynchronous paging
 - History.js enabled
 - Related articles under posts
 - Social sharing
 - Animations and modern layout approach
 
-#### Coming in 0.5.0   
-- Infinite scrolling
-- Older posts in two rows
-- Redesigned footer
-- SEO improvements
 
 ### Changelog
-------------------------------
+____
+### 0.5
+- simplified stylesheets
+- dynamic navbar
+- better layout for post listings
+- typography improvements
+- rethought footer
+- performance optimized
+- tweaked responsive behavior
+- fixed issue #3
+- fixed issue #4
+_____
 #### 0.4.2    
 - asynchronous paging
 - LESS styles are no longer part of the project
    
-------------------------------
+______
 #### 0.4.1 - service release
 - fixed issues #1 #2
 - animations only for big screens
 - text size corrections to maintain optimal number of characters on line
    
-------------------------------
+_____
 #### 0.4
 - rewriten most layout code, 18% faster page rendering in chrome
 - completely rewriten typography using golden cut scaling
@@ -52,7 +57,7 @@ None. If you find something, report it and it will be fixed in next commit
 ## Copyright & License
 
 Copyright (C) 2013 Viktor Bezdek - Released under the MIT License.    
----
+___
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
