@@ -868,6 +868,10 @@ main.content article.detail-post h1 {
   font-size: 5.5em;
 }
 
+main.content article.detail-post img {
+  max-width: 100%;
+}
+
 main.content article.latest-post {
   display: inline;
   float: left;
