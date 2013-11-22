@@ -20,7 +20,6 @@ Responsive, asynchronous, content centric theme for Ghost. Inspired by my own Wo
 ### Changelog
 
 ### 0.5.1
-____
 - fixed ios < 7 fixed layout issue
 - added mail icon fixed issue #5
 - combined js
@@ -37,6 +36,7 @@ ____
 - tweaked responsive behavior
 - fixed issue #3
 - fixed issue #4
+
 _____
 #### 0.4.2
 - asynchronous paging
