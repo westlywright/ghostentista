@@ -24,8 +24,8 @@
 
 @font-face {
   font-family: 'ghostentista';
-  src: url('../fonts/icons/ghostentista.eot?42851159');
-  src: url('../fonts/icons/ghostentista.eot?42851159#iefix') format('embedded-opentype'), url('../fonts/icons/ghostentista.woff?42851159') format('woff'), url('../fonts/icons/ghostentista.ttf?42851159') format('truetype'), url('../fonts/icons/ghostentista.svg?42851159#ghostentista') format('svg');
+  src: url('../fonts/icons/ghostentista.eot?35283255');
+  src: url('../fonts/icons/ghostentista.eot?35283255#iefix') format('embedded-opentype'), url('../fonts/icons/ghostentista.woff?35283255') format('woff'), url('../fonts/icons/ghostentista.ttf?35283255') format('truetype'), url('../fonts/icons/ghostentista.svg?35283255#ghostentista') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -151,6 +151,12 @@
   content: '\f310';
 }
 
+.icon-mail-circled:before {
+  content: '\e0ea';
+}
+
+/* '' */
+
 body {
   width: 100%;
   *zoom: 1;
@@ -269,7 +275,6 @@ hr {
 blockquote {
   line-height: 1.5;
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 1.6rem 0rem 1.6rem 0rem;
   padding: 0.8rem 1.6rem;
@@ -339,7 +344,6 @@ tt {
 
 pre {
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 1rem 2rem !important;
@@ -373,13 +377,11 @@ kbd {
   font-weight: bold;
   background: #f4f4f4;
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #ffffff inset;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #ffffff inset;
 }
 
 table {
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 1.6rem 0;
   width: 100%;
@@ -443,7 +445,6 @@ pre[class*="language-"] {
   white-space: pre;
   word-spacing: normal;
   -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
   -webkit-hyphens: none;
   -moz-hyphens: none;
@@ -617,7 +618,6 @@ h6 {
 
 body,
 body * {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -673,20 +673,25 @@ nav#pagination #more-posts:hover {
 }
 
 .headerBackground {
-  background: -webkit-gradient(linear, top left, bottom left, from(rgba(35, 83, 138, 0.9)), to(rgba(52, 130, 173, 0.9)));
   background: -webkit-linear-gradient(top, rgba(35, 83, 138, 0.9) 0%, rgba(52, 130, 173, 0.9) 100%);
   background: linear-gradient(to bottom, rgba(35, 83, 138, 0.9) 0%, rgba(52, 130, 173, 0.9) 100%);
 }
 
+body.no-fixed-elements header#site-head {
+  position: static;
+}
+
+body.no-fixed-elements main.content {
+  margin-top: 0;
+}
+
 #secondaryTitle {
-  -webkit-box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.5);
   text-shadow: -1px -1px 2px rgba(0, 0, 0, 0.35);
   width: 100%;
   position: fixed;
   top: -5rem;
   height: 4rem;
-  background: -webkit-gradient(linear, top left, bottom left, from(rgba(35, 83, 138, 0.9)), to(rgba(52, 130, 173, 0.9)));
   background: -webkit-linear-gradient(top, rgba(35, 83, 138, 0.9) 0%, rgba(52, 130, 173, 0.9) 100%);
   background: linear-gradient(to bottom, rgba(35, 83, 138, 0.9) 0%, rgba(52, 130, 173, 0.9) 100%);
   z-index: 100;
@@ -751,7 +756,6 @@ header#site-head {
   height: 600px;
   width: 100%;
   background-position: 50% 50%;
-  -webkit-background-size: cover;
   background-size: cover;
   font-size: 2.5em;
 }
@@ -774,7 +778,6 @@ header#site-head .vertical a {
 header#site-head #site-head-content {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
-  background: -webkit-gradient(linear, top left, bottom left, from(rgba(35, 83, 138, 0.9)), to(rgba(52, 130, 173, 0.9)));
   background: -webkit-linear-gradient(top, rgba(35, 83, 138, 0.9) 0%, rgba(52, 130, 173, 0.9) 100%);
   background: linear-gradient(to bottom, rgba(35, 83, 138, 0.9) 0%, rgba(52, 130, 173, 0.9) 100%);
   border-radius: 10em;
@@ -786,7 +789,6 @@ header#site-head #site-head-content {
 
 header#site-head #site-head-content:hover {
   -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
   transform: scale(0.95);
 }
 
@@ -819,7 +821,6 @@ header#site-head h1.image-logo {
   text-indent: -30em;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  -webkit-background-size: contain;
   background-size: contain;
 }
 
@@ -838,12 +839,12 @@ header#site-head h2 {
 }
 
 main.content {
+  -webkit-overflow-scrolling: touch;
   min-height: 30em;
   position: relative;
   z-index: 3;
   width: 100%;
   overflow: hidden;
-  -webkit-box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.35);
   box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.35);
   background-color: #ffffff;
   padding: 5rem 0 3em 0;
@@ -959,7 +960,6 @@ main.content article h2.post-title a {
 
 main.content article h2.post-title:hover {
   -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
   transform: scale(0.95);
 }
 
