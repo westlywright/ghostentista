@@ -1,4 +1,5 @@
-# Ghostentista
+# Ghostentista [![Project Status](http://stillmaintained.com/viktorbezdek/ghostentista.png)](http://stillmaintained.com/viktorbezdek/ghostentista)
+
 ## Theme for Ghost Blogging Platform
 ### version 0.5.1
 
