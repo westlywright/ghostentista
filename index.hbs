@@ -8,12 +8,9 @@
 
                 <article class="{{post_class}}">
                     <header class="post-header">
-                        <span class="post-meta">
-                            <time datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
-                            {{#if tags}}<span class="tagged"> on {{tags}}</span>{{/if}}
-                        </span>
-
                         <h2 class="post-title"><a href="{{url}}" title="{{title}}">{{{title}}}</a></h2>
+
+
                     </header>
                     <section class="post-excerpt">
                         <p>{{excerpt}}&hellip; <a href="{{url}}" title="{{title}}" class="more-link">Read&nbsp;more&nbsp;&rarr;</a></p>
@@ -22,6 +19,10 @@
 
                 {{#if @even}}
                     <hr class="post-sep"/>{{/if}}
+                    <div class="post-meta">
+                        <time class="label" datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
+                    </div>
+                    {{!-- {{#if tags}}<span class="tagged">Tagged: {{tags}}</span>{{/if}} --}}
 
             {{/foreach}}
 
@@ -32,12 +33,9 @@
                 {{#if @first}}
                     <article class="latest-post">
                         <header class="post-header">
-                            <span class="post-meta">
-                                <time datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
-                                {{#if tags}}<span class="tagged"> on {{tags}}</span>{{/if}}
-                            </span>
-
                             <h2 class="post-title"><a href="{{url}}" title="{{title}}">{{{title}}}</a></h2>
+
+
                         </header>
                         <section class="post-excerpt">
                             <p>{{excerpt}}&hellip; <a href="{{url}}" title="{{title}}" class="more-link">Read&nbsp;more&nbsp;&rarr;</a></p>
@@ -45,6 +43,10 @@
                     </article>
 
                     <hr class="post-sep"/>
+                    <div class="post-meta">
+                        <time class="label" datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
+                    </div>
+                    {{!-- {{#if tags}}<span class="tagged">Tagged: {{tags}}</span>{{/if}} --}}
                 {{/if}}
             {{/foreach}}
 
@@ -53,12 +55,9 @@
                 {{#unless @first}}
                     <article class="{{post_class}}">
                         <header class="post-header">
-                        <span class="post-meta">
-                            <time datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
-                            {{#if tags}}<span class="tagged"> on {{tags}}</span>{{/if}}
-                        </span>
-
                             <h2 class="post-title"><a href="{{url}}" title="{{title}}">{{{title}}}</a></h2>
+
+
                         </header>
                         <section class="post-excerpt">
                             <p>{{excerpt}}&hellip; <a href="{{url}}" title="{{title}}" class="more-link">Read&nbsp;more&nbsp;&rarr;</a></p>
@@ -67,6 +66,10 @@
 
                     {{#if @odd}}
                         <hr class="post-sep"/>{{/if}}
+                        <div class="post-meta">
+                            <time class="label" datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time>
+                        </div>
+                        {{!-- {{#if tags}}<span class="tagged">Tagged: {{tags}}</span>{{/if}} --}}
 
                 {{/unless}}
             {{/foreach}}
